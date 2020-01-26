@@ -19,12 +19,6 @@ public class ReactiveWebSocketHandler implements WebSocketHandler {
     }
     @Override
     public Mono<Void> handle(WebSocketSession webSocketSession) {
-//        final Flux<WebSocketMessage> message = webSocketSession
-//                .receive()
-//                .map(webSocketMessage -> webSocketMessage.getPayloadAsText())
-//                .map(helloMessage -> greetingsService.greeting(helloMessage))
-//                .map(greetings -> webSocketSession.textMessage(greetings));
-//        return webSocketSession.send(message);
         webSocketSession
                 .receive()
                 .map(webSocketMessage -> webSocketMessage.getPayloadAsText())
